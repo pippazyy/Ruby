@@ -1,0 +1,8 @@
+<h1>Result</h1>
+
+<% if @result.present? %>
+  <%= render partial: @result %>
+<% else %>
+  <p>There are no results containing the term(s) <%= params[:search] %>.</p>
+<% end %>
+

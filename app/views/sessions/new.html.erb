@@ -1,0 +1,36 @@
+<div class="block" id="block-login">  
+  <h1>Login /
+  	<%= link_to "Signup", {:controller => "users", :action => "new"} %>
+  </h1>
+  <div class="content login">
+<div class="flash">
+      <% flash.each do |type, message| %>
+        <div class="message notice">
+          <p>
+            <%= message %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+
+  <%= form_tag do %>
+      <div class="field">
+          <%= label_tag :name, 'Name:' %><br>
+          <%= text_field_tag :name, params[:name] %>
+      </div>
+      <div class="field">
+        <%= label_tag :password, 'Password:' %><br>
+		<%= password_field_tag :password, params[:password] %>
+      </div>
+      <div class="field">
+      	<div class="button"><%= submit_tag "Login" %></div>
+      </div>
+  <% end %>
+  </div>
+  
+</div>
+
+
+
+
+	  

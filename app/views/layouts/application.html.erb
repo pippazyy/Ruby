@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ruby</title>
+  <%= stylesheet_link_tag    'styles', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "jquery" %>
+  <%= javascript_include_tag "displayLeftNav" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id=header>
+	<div class="header-back">
+		<div class="header-back-left"></div>
+		<div class="header-back-right">
+	        <p class="message">CODE YOURSELF A NEW FURTURE</p>
+	    </div>
+	</div>
+
+	<div>
+		<header id="site-header">
+			<%= link_to root_path do %>
+			   <%= image_tag "logo.png", class: "logo" %>
+			<% end %>
+		</header>
+	</div>
+</div>
+
+<div id="wrapper">
+    <div id="content" class="clearfix">
+		<aside class="aside-left">
+		    <ul class="nav-links">
+				<li><a title="add" href="/collections/new">Add Collection</a></li>
+		        <li><a title="setup" href="/collections/search">Search</a></li>
+		        <li>
+		            <a title="view" class="cat-link closed">Views</a>
+		            <ul>
+		                <li><a title="albums" class="cat-link closed">Albums</a>
+		                    <ul class="sub-nav-links">
+		                        <li><a href="/collections/index" title="Individual album view with songs">Individual album</a></li>
+		                    </ul>
+		                </li>
+		                <li><a href="#" title="Artists">Artists</a></li>
+		                <li><a href="#" title="Songs">Songs</a></li>
+
+		                <li><a title="favorites" class="cat-link closed">Favorites</a>
+		                    <ul class="sub-nav-links">
+		                    <li><a href="/collections" title="List of your collections">Albums</a></li>
+		                    <li><a href="#" title="USB Access">Artists</a></li>
+		                    <li><a href="#" title="USB Device">Songs</a></li>
+		                    </ul>
+		                </li>
+		            </ul>
+		        </li>
+		    </ul>
+		</aside>
+
+        <section id="main">
+			<%= yield %>
+        </section>
+    </div>
+</div>
+
+
+</body>
+</html>
